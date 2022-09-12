@@ -1,6 +1,7 @@
 {
   "name": "psycript",
   "version": "0.2.0",
+  "license": "MIT",
   "initFile": "src/index.js",
   "main": "dist/psycript.mjs",
   "module": "dist/psycript.mjs",
