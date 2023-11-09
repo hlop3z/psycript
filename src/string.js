@@ -35,7 +35,8 @@ const stringTo = {
       .trim()
       .replace(/\s+/g, "-")
       .replace(/[^\w-]+/g, "")
-      .replace(/--+/g, "-"),
+      .replace(/--+/g, "-")
+      .replace(/^-+/g, ""),
 
   snake: (text) =>
     text
