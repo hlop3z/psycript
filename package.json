@@ -1,6 +1,7 @@
 {
   "name": "psycript",
-  "version": "0.2.1",
+  "version": "0.2.2",
+  "type": "module",
   "license": "MIT",
   "initFile": "src/index.js",
   "main": "dist/psycript.mjs",
@@ -8,16 +9,11 @@
   "jsdelivr": "dist/psycript.mjs",
   "unpkg": "dist/psycript.mjs",
   "devDependencies": {
-    "rollup": "^1.29.0",
-    "eslint": "^8.7.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.4"
+    "@rollup/plugin-terser": "^0.4.4"
   },
   "scripts": {
     "build": "rollup -c",
-    "dev": "sh run-devops.sh",
-    "test": "node test/test.js",
-    "lint": "eslint \"src/**\" --fix && eslint \"test/**\" --fix"
+    "test": "node test/test.js"
   },
   "files": [
     "dist"

@@ -1,4 +1,4 @@
-const plugin = require("../dist/psycript.cjs.js");
+import plugin from "../dist/psycript.mjs";
 
 // console.log(plugin)
 
