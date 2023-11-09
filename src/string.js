@@ -52,10 +52,6 @@ const stringTo = {
 };
 
 class TextBase {
-  /**
-   *
-   * @param {string} str Python like String `str` handler.
-   */
   constructor(value) {
     this.$value = value;
     this.$keys = [
@@ -70,40 +66,48 @@ class TextBase {
     ];
   }
 
+  transform(transformer, ...args) {
+    return stringTo[transformer](this.$value, ...args);
+  }
+
+  cut(size) {
+    return this.transform("cut", size);
+  }
+
   get value() {
     return this.$value;
   }
 
+  set value(newValue) {
+    this.$value = newValue;
+  }
+
   get lower() {
-    return stringTo.lower(this.$value);
+    return this.transform("lower");
   }
 
   get upper() {
-    return stringTo.upper(this.$value);
+    return this.transform("upper");
   }
 
   get title() {
-    return stringTo.title(this.$value);
+    return this.transform("title");
   }
 
   get pascal() {
-    return stringTo.pascal(this.$value);
+    return this.transform("pascal");
   }
 
   get camel() {
-    return stringTo.camel(this.$value);
+    return this.transform("camel");
   }
 
   get slug() {
-    return stringTo.slug(this.$value);
+    return this.transform("slug");
   }
 
   get snake() {
-    return stringTo.snake(this.$value);
-  }
-
-  cut(size) {
-    return stringTo.cut(this.$value, size);
+    return this.transform("snake");
   }
 }
 
